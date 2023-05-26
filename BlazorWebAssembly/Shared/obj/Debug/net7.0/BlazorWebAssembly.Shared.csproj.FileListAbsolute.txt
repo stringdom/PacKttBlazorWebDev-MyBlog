@@ -1,0 +1,12 @@
+/workspaces/MyBlog/BlazorWebAssembly/Shared/bin/Debug/net7.0/BlazorWebAssembly.Shared.deps.json
+/workspaces/MyBlog/BlazorWebAssembly/Shared/bin/Debug/net7.0/BlazorWebAssembly.Shared.dll
+/workspaces/MyBlog/BlazorWebAssembly/Shared/bin/Debug/net7.0/BlazorWebAssembly.Shared.pdb
+/workspaces/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.csproj.AssemblyReference.cache
+/workspaces/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.AssemblyInfoInputs.cache
+/workspaces/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.AssemblyInfo.cs
+/workspaces/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.csproj.CoreCompileInputs.cache
+/workspaces/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.dll
+/workspaces/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/refint/BlazorWebAssembly.Shared.dll
+/workspaces/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/BlazorWebAssembly.Shared.pdb
+/workspaces/MyBlog/BlazorWebAssembly/Shared/obj/Debug/net7.0/ref/BlazorWebAssembly.Shared.dll
