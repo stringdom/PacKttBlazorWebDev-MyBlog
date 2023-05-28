@@ -17,17 +17,17 @@ public class BlogApiJsonDirectAccess: IBlogApi
         {
             Directory.CreateDirectory(_settings.DataPath);
         }
-        if (!Directory.Exists($@"{_settings.DataPath}\{_settings.BlogPostsFolder}"))
+        if (!Directory.Exists($@"{_settings.DataPath}/{_settings.BlogPostsFolder}"))
         {
-            Directory.CreateDirectory($@"{_settings.DataPath}\{_settings.BlogPostsFolder}");
+            Directory.CreateDirectory($@"{_settings.DataPath}/{_settings.BlogPostsFolder}");
         }
-            if (!Directory.Exists($@"{_settings.DataPath}\{_settings.CategoriesFolder}"))
+            if (!Directory.Exists($@"{_settings.DataPath}/{_settings.CategoriesFolder}"))
         {
-            Directory.CreateDirectory($@"{_settings.DataPath}\{_settings.CategoriesFolder}");
+            Directory.CreateDirectory($@"{_settings.DataPath}/{_settings.CategoriesFolder}");
         }
-            if (!Directory.Exists($@"{_settings.DataPath}\{_settings.TagsFolder}"))
+            if (!Directory.Exists($@"{_settings.DataPath}/{_settings.TagsFolder}"))
         {
-            Directory.CreateDirectory($@"{_settings.DataPath}\{_settings.TagsFolder}");
+            Directory.CreateDirectory($@"{_settings.DataPath}/{_settings.TagsFolder}");
         }
     }
     private void Load<T>(ref List<T>? list, string folder)
@@ -35,7 +35,7 @@ public class BlogApiJsonDirectAccess: IBlogApi
         if (list == null)
         {
             list = new();
-            var fullpath = $@"{_settings.DataPath}\{folder}";
+            var fullpath = $@"{_settings.DataPath}/{folder}";
             foreach (var f in Directory.GetFiles(fullpath))
             {
                 var json = File.ReadAllText(f);
@@ -70,7 +70,7 @@ public class BlogApiJsonDirectAccess: IBlogApi
 
     private async Task SaveAsync<T>(List<T>? list, string folder, string filename, T item)
     {
-        var filepath = $@"{_settings.DataPath}\{folder}\{filename}";
+        var filepath = $@"{_settings.DataPath}/{folder}/{filename}";
         await File.WriteAllTextAsync(filepath, JsonSerializer.Serialize<T>(item));
         if (list == null)
         {
@@ -84,7 +84,7 @@ public class BlogApiJsonDirectAccess: IBlogApi
 
     private void DeleteAsync<T>(List<T>? list, string folder, string id)
     {
-        var filepath = $@"{_settings.DataPath}\{folder}\{id}.json";
+        var filepath = $@"{_settings.DataPath}/{folder}/{id}.json";
         try
         {
             File.Delete(filepath);
