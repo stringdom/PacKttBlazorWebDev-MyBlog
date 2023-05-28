@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows,browser
 build_property.RootNamespace = BlazorWebAssembly.Shared
-build_property.ProjectDir = /workspaces/MyBlog/BlazorWebAssembly/Shared/
+build_property.ProjectDir = /mnt/Stringdom/home/leo/Documentos/Development/PacKttBlazorWebDev-MyBlog/BlazorWebAssembly/Shared/
