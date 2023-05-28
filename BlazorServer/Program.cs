@@ -12,7 +12,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddOptions<BlogApiJsonDirectAccessSetting>().Configure(options => {
     options.DataPath = @"..\..\..\Data\";
-    options.BlogPostFolder = "Blogposts";
+    options.BlogPostsFolder = "Blogposts";
     options.TagsFolder = "Tags";
     options.CategoriesFolder = "Categories";
 });

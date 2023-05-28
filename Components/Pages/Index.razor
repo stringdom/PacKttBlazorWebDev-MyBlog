@@ -1,6 +1,6 @@
 ﻿@page "/"
-@using Data.Models.Interfaces
 @using Data.Models
+@using Data.Models.Interfaces
 @inject IBlogApi _api
 
 <ul>
@@ -10,7 +10,7 @@
   }
 </ul>
 
-@code{
+@code {
   protected List<BlogPost> posts = new List<BlogPost>();
   protected override async Task OnInitializedAsync()
   {
@@ -18,11 +18,3 @@
     await base.OnInitializedAsync();
   }
 }
-
-@* <PageTitle>Index</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" /> *@

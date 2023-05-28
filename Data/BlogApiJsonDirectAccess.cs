@@ -1,7 +1,7 @@
+using Data.Models;
 using Data.Models.Interfaces;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
-using Data.Models;
 
 namespace Data;
 public class BlogApiJsonDirectAccess: IBlogApi
@@ -10,7 +10,6 @@ public class BlogApiJsonDirectAccess: IBlogApi
     private List<Category>? _categories;
     private List<Tag>? _tags;
     BlogApiJsonDirectAccessSetting _settings;
-    // Injection of options and settings for flexible configuration
     public BlogApiJsonDirectAccess(IOptions<BlogApiJsonDirectAccessSetting> option)
     {
         _settings = option.Value;
@@ -18,9 +17,9 @@ public class BlogApiJsonDirectAccess: IBlogApi
         {
             Directory.CreateDirectory(_settings.DataPath);
         }
-        if (!Directory.Exists($@"{_settings.DataPath}\{_settings.BlogPostFolder}"))
+        if (!Directory.Exists($@"{_settings.DataPath}\{_settings.BlogPostsFolder}"))
         {
-            Directory.CreateDirectory($@"{_settings.DataPath}\{_settings.BlogPostFolder}");
+            Directory.CreateDirectory($@"{_settings.DataPath}\{_settings.BlogPostsFolder}");
         }
             if (!Directory.Exists($@"{_settings.DataPath}\{_settings.CategoriesFolder}"))
         {
@@ -31,7 +30,6 @@ public class BlogApiJsonDirectAccess: IBlogApi
             Directory.CreateDirectory($@"{_settings.DataPath}\{_settings.TagsFolder}");
         }
     }
-// Generic classes to handle loading saving and deleting content
     private void Load<T>(ref List<T>? list, string folder)
     {
         if (list == null)
@@ -52,7 +50,7 @@ public class BlogApiJsonDirectAccess: IBlogApi
 
     private Task LoadBlogPostsAsync()
     {
-        Load<BlogPost>(ref _blogPosts, _settings.BlogPostFolder);
+        Load<BlogPost>(ref _blogPosts, _settings.BlogPostsFolder);
         return Task.CompletedTask;
     }
 
@@ -161,7 +159,7 @@ public class BlogApiJsonDirectAccess: IBlogApi
         {
             item.Id = Guid.NewGuid().ToString();
         }
-        await SaveAsync<BlogPost>(_blogPosts, _settings.BlogPostFolder, $"{item.Id}.json", item);
+        await SaveAsync<BlogPost>(_blogPosts, _settings.BlogPostsFolder, $"{item.Id}.json", item);
         return item;
     }
 
@@ -187,7 +185,7 @@ public class BlogApiJsonDirectAccess: IBlogApi
 
     public Task DeleteBlogPostAsync(string id)
     {
-        DeleteAsync(_blogPosts, _settings.BlogPostFolder, id);
+        DeleteAsync(_blogPosts, _settings.BlogPostsFolder, id);
         if (_blogPosts != null)
         {
             var item = _blogPosts.FirstOrDefault(b => b.Id == id);
