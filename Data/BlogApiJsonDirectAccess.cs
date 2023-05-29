@@ -98,7 +98,7 @@ public class BlogApiJsonDirectAccess: IBlogApi
         return _blogPosts ?? new();
     }
 
-    public async Task<BlogPost?> GetBlogPostAsync(string id)
+    public async Task<BlogPost?> GetBlogPostsAsync(string id)
     {
         await LoadBlogPostsAsync();
         if (_blogPosts == null)

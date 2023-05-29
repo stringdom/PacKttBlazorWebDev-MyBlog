@@ -6,7 +6,7 @@ public interface IBlogApi
     Task<List<BlogPost>?> GetBlogPostsAsync(int numberofposts, int startindex);
     Task<List<Category>?> GetCategoriesAsync();
     Task<List<Tag>?> GetTagsAsync();
-    Task<BlogPost?> GetBlogPostAsync(string id);
+    Task<BlogPost?> GetBlogPostsAsync(string id);
     Task<Category?> GetCategoryAsync(string id);
     Task<Tag?> GetTagAsync(string id);
     Task<BlogPost?> SaveBlogPostAsync(BlogPost item);
